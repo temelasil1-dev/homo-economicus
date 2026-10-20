@@ -19,12 +19,16 @@
         }
         /* Sol Menü Alanı */
         nav {
-            width: 260px;
+            width: 280px;
             background-color: #ffffff;
             border-right: 1px solid #eaeaea;
             padding: 40px 20px;
             display: flex;
             flex-direction: column;
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            overflow-y: auto;
         }
         .site-title {
             font-size: 1.3rem;
@@ -36,7 +40,7 @@
         .site-subtitle {
             font-size: 0.85rem;
             color: #7f8c8d;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
             font-style: italic;
         }
         .nav-links {
@@ -45,7 +49,7 @@
             margin: 0;
         }
         .nav-links li {
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
         .nav-links a {
             text-decoration: none;
@@ -65,7 +69,8 @@
         main {
             flex: 1;
             padding: 60px 80px;
-            max-width: 900px;
+            max-width: 1000px;
+            overflow-y: auto;
         }
         .content-box {
             background: #ffffff;
@@ -73,13 +78,48 @@
             padding: 40px;
             border-radius: 8px;
             box-shadow: 0 1px 3px rgba(0,0,0,0.01);
+            margin-bottom: 30px;
+        }
+        h1, h2, h3 {
+            color: #1a252f;
         }
         h1 {
             font-size: 1.8rem;
-            color: #1a252f;
-            margin-top: 0;
             border-bottom: 1px solid #eee;
             padding-bottom: 15px;
+            margin-top: 0;
+        }
+        h2 {
+            font-size: 1.3rem;
+            margin-top: 30px;
+            border-bottom: 1px solid #f2f2f2;
+            padding-bottom: 8px;
+            color: #2980b9;
+        }
+        ul.syllabus-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        ul.syllabus-list > li {
+            margin-bottom: 20px;
+            background: #fdfdfd;
+            border: 1px solid #f0f0f0;
+            padding: 15px 20px;
+            border-radius: 6px;
+        }
+        ul.syllabus-list strong {
+            color: #2c3e50;
+            font-size: 1.05rem;
+        }
+        ul.sub-topics {
+            list-style-type: disc;
+            padding-left: 20px;
+            margin-top: 8px;
+            color: #555;
+            font-size: 0.92rem;
+        }
+        ul.sub-topics li {
+            margin-bottom: 4px;
         }
         p {
             line-height: 1.7;
@@ -91,6 +131,7 @@
             color: #95a5a6;
             border-top: 1px solid #eaeaea;
             padding-top: 20px;
+            text-align: center;
         }
         @media (max-width: 768px) {
             body {
@@ -98,6 +139,8 @@
             }
             nav {
                 width: 100%;
+                height: auto;
+                position: relative;
                 border-right: none;
                 border-bottom: 1px solid #eaeaea;
                 padding: 20px;
@@ -116,6 +159,8 @@
         <div class="site-subtitle">Akademik İktisat Platformu</div>
         
         <ul class="nav-links">
+            <li><a href="#giris">Ana Sayfa</a></li>
+            <li><a href="# муfredat">Ders Müfredatı</a></li>
             <li><a href="#iktisada-giris">İktisada Giriş</a></li>
             <li><a href="#mikroekonomi">Mikroekonomi</a></li>
             <li><a href="#makroekonomi">Makroekonomi</a></li>
@@ -125,11 +170,111 @@
 
     <!-- Sağ Ana İçerik -->
     <main>
-        <div class="content-box">
+        <div class="content-box" id="giris">
             <h1>Hoş Geldiniz</h1>
             <p>Bu site; günlük haberlerden, spekülasyonlardan ve ticari kaygılardan arındırılmış; tamamen saf akademik iktisat, teorik modeller ve analitik altyapı üzerine kurulmuş bağımsız bir dijital arşivdir.</p>
-            <p>Sol menüden ilgili akademik kategorileri seçerek çalışmalara ve teorik notlara ulaşabilirsiniz.</p>
-            
+            <p>Sol menüden veya aşağıdaki müfredat tablosundan ders içeriklerine ulaşabilirsiniz.</p>
+        </div>
+
+        <div class="content-box" id="mufredat">
+            <h2>İktisada Giriş — Ders Müfredatı ve İçindekiler</h2>
+            <p>Kitap boyunca işlenecek ana üniteler ve başlıklar aşağıda listelenmiştir:</p>
+
+            <ul class="syllabus-list">
+                <li>
+                    <strong>Bölüm 1: Ekonomi Nedir?</strong>
+                    <ul class="sub-topics">
+                        <li>Hiç Düşündünüz mü? & Giriş</li>
+                        <li>Temel Kavramlar (Mal ve Hizmetler, Kaynaklar)</li>
+                        <li>Ekonomi ve Bireysel Kararlar (Rasyonellik, Teşvikler, Marjinal Analiz)</li>
+                        <li>Ekonomi Biliminde Üç Temel Soru ve Çözümleri</li>
+                        <li>Ekonomi Biliminde Modeller (Pozitif ve Normatif Analiz, Sebep-Sonuç)</li>
+                        <li>Makroekonomi ve Mikroekonomi Ayrımı</li>
+                        <li>Su-Elmas Paradoksu ve Grafiklerin Kullanımı</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Bölüm 2: Kıtlık, Tercih ve Fayda</strong>
+                    <ul class="sub-topics">
+                        <li>Kitlik ve Tercih, Seçim ve Fırsat Maliyeti</li>
+                        <li>Fırsat Maliyeti ve Parasal Maliyet</li>
+                        <li>Üretim İmkanları Siniri (ÜİS) ve Artan Fırsat Maliyeti</li>
+                        <li>Alternatif Ekonomik Sistemler (Piyasa, Kumanda, Karma)</li>
+                        <li>Tercih ve Fayda (Toplam ve Marjinal Fayda, Tüketici Dengesi)</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Bölüm 3: Arz ve Talep</strong>
+                    <ul class="sub-topics">
+                        <li>Talep Şedülü, Talep Eğrisi ve Piyasa Talep Eğrisi</li>
+                        <li>Talep Eğrisi Boyunca Hareketlenme ve Kaymalar (Gelir, Fiyat, Zevkler)</li>
+                        <li>Arz Şedülü, Arz Eğrisi ve Piyasa Arz Eğrisi</li>
+                        <li>Arz Eğrisinde Hareketlenmeler ve Kaymalar (Maliyet, Teknoloji, Vergi)</li>
+                        <li>Piyasa Dengesi ve Dengedeki Değişmeler</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Bölüm 4: Esneklik</strong>
+                    <ul class="sub-topics">
+                        <li>Talebin Fiyat Esnekliği (Tanımı, Ölçülmesi, Yay Esnekliği)</li>
+                        <li>Fiyat Esnekliği ve Toplam Hasılat</li>
+                        <li>Talebi Etkileyen Faktörler (İkame, Lüks/Zorunlu Mal, Zaman)</li>
+                        <li>Talebin Gelir Esnekliği ve Çapraz Fiyat Esnekliği</li>
+                        <li>Arz Esnekliği ve Belirleyicileri</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Bölüm 5: Arz ve Talep Uygulamaları</strong>
+                    <ul class="sub-topics">
+                        <li>Hükümet Müdahaleleri (Taban ve Tavan Fiyat, Asgari Ücret)</li>
+                        <li>Tarımsal Destekleme Fiyatları ve Kira Kontrolleri</li>
+                        <li>Miktar Kontrolleri (Üretim ve İthalat Kotaları)</li>
+                        <li>Vergi Uygulamaları ve Vergi Yükü Dağılımı</li>
+                        <li>Tüketici ve Üretici Rantı (Artığı)</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Bölüm 6: Üretim ve Maliyetler</strong>
+                    <ul class="sub-topics">
+                        <li>Üretim Fonksiyonu ve Kısa Dönemde Üretim</li>
+                        <li>Toplam, Ortalama ve Marjinal Fiziksel Ürün (TPP, APP, MPP)</li>
+                        <li>Uzun Dönemde Üretim ve Faktör Bileşiminin Seçimi</li>
+                        <li>Açık / Örtük Maliyetler ve Ekonomik Kar</li>
+                        <li>Kısa ve Uzun Dönem Maliyet Eğrileri</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Bölüm 7: Tam Rekabet Piyasası</strong>
+                    <ul class="sub-topics">
+                        <li>Tam Rekabet Piyasasının Özellikleri ve Talep Eğrisi</li>
+                        <li>Kısa Dönemde Firma Davranışı ve Kar Maksimizasyonu</li>
+                        <li>Kısa Dönem Firma Arz Eğrisi ve Uzun Dönem Denge</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Bölüm 8: Eksik Rekabet Piyasaları</strong>
+                    <ul class="sub-topics">
+                        <li>Tekel (Monopol) Piyasası ve Fiyat Farklılaştırması</li>
+                        <li>Tekelci Rekabet Piyasası</li>
+                        <li>Oligopol Piyasası ve Türleri / Denge Analizleri</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Bölüm 9: Faktör Piyasası</strong>
+                    <ul class="sub-topics">
+                        <li>Emek Piyasası (Emek Talebi ve Arzı, Denge)</li>
+                        <li>Diğer Üretim Faktörleri (Toprak, Sermaye)</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Bölüm 10: Kamusal Mallar, Dışsallıklar ve Çevre Ekonomisi</strong>
+                    <ul class="sub-topics">
+                        <li>Kamusal Mallar ve Bedavacılık Sorunu</li>
+                        <li>Dışsallıklar ve Çözüm Yolları</li>
+                    </ul>
+                </li>
+            </ul>
+
             <footer>
                 <p>&copy; 2026 Homo Economicus — Ticari olmayan açık akademik kaynak.</p>
             </footer>
